@@ -1,0 +1,31 @@
+{
+  "name": "hesabyar",
+  "productName": "حسابیار",
+  "version": "1.0.0",
+  "description": "نرم‌افزار حسابداری فروشگاه موبایل و کامپیوتر",
+  "main": "electron/main.js",
+  "author": "Hesabyar",
+  "scripts": {
+    "start": "electron .",
+    "dist:win": "electron-builder --win --publish never"
+  },
+  "dependencies": {
+    "@capacitor/android": "^6.0.0",
+    "@capacitor/cli": "^6.0.0",
+    "@capacitor/core": "^6.0.0",
+    "@capacitor/filesystem": "^6.0.0",
+    "@capacitor/share": "^6.0.0"
+  },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.0.0"
+  },
+  "build": {
+    "appId": "ir.hesabyar.app",
+    "productName": "Hesabyar",
+    "directories": { "output": "dist" },
+    "files": ["electron/**", "www/**", "package.json"],
+    "win": { "target": "nsis", "icon": "build/icon.png" },
+    "nsis": { "oneClick": false, "allowToChangeInstallationDirectory": true, "createDesktopShortcut": true, "shortcutName": "حسابیار" }
+  }
+}
